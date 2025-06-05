@@ -1,0 +1,34 @@
+What is Docker?
+	•	Docker is a containerization platform that allows you to run applications in isolated environments called containers.
+	•	Think of it as a lightweight virtual machine.
+	•	Each service (e.g., Postgres, pgAdmin) runs in its own container.
+
+
+What is pgAdmin?
+	•	pgAdmin is a web-based GUI tool for managing PostgreSQL databases.
+	•	It allows you to browse tables, run SQL queries, and inspect data visually.
+
+⸻
+
+How They Work Together
+	•	PostgreSQL is your actual database engine.
+	•	pgAdmin connects to PostgreSQL to let you manage the DB with a graphical interface.
+	•	Docker runs both PostgreSQL and pgAdmin in isolated containers, making setup consistent and portable.
+
+Typical flow:
+Docker → runs containers for → PostgreSQL (DB) + pgAdmin (UI)
+pgAdmin → connects to → PostgreSQL (via host, port, user, password)
+
+⸻
+
+ETL with Python + SQLAlchemy + Pandas:
+
+from sqlalchemy import create_engine
+import pandas as pd
+
+# Connect to Postgres DB
+engine = create_engine('postgresql://root:root@localhost:5432/ny_taxi')
+
+# Read CSV and write to DB
+df = pd.read_csv('yellow_tripdata_2021-01.csv')
+df.to_sql(name='yellow_taxi_trips', con=engine, if_exists='replace')
