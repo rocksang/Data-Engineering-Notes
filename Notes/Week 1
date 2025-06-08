@@ -29,6 +29,18 @@ import pandas as pd
 # Connect to Postgres DB
 engine = create_engine('postgresql://root:root@localhost:5432/ny_taxi')
 
+
 # Read CSV and write to DB
 df = pd.read_csv('yellow_tripdata_2021-01.csv')
 df.to_sql(name='yellow_taxi_trips', con=engine, if_exists='replace')
+
+⸻
+
+What is Terraform? 
+	•	Terraform is indeed Infrastructure as Code (IaC)
+
+What does it do?
+	•	Provision cloud infrastructure. Example: Launch servers, databases, load balancers on AWS, Azure, GCP, etc.
+	•	Set up networking. Example: Define VPCs, subnets, firewall rules.
+	•	Manage resources consistently across environments. Example: Have identical infrastructure for dev, staging, and prod.
+	•	Track and apply changes. It calculates a “diff” and applies only what changed — like Git for infrastructure.
