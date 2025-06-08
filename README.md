@@ -1,1 +1,1 @@
-# Notes of weekly learning from Data Talk Club
+# Welcome to my notes for Data Talk Club DE learning
