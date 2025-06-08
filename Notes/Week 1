@@ -44,3 +44,7 @@ What does it do?
 	•	Set up networking. Example: Define VPCs, subnets, firewall rules.
 	•	Manage resources consistently across environments. Example: Have identical infrastructure for dev, staging, and prod.
 	•	Track and apply changes. It calculates a “diff” and applies only what changed — like Git for infrastructure.
+
+⸻
+
+About GCP
